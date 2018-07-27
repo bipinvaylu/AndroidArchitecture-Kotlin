@@ -54,9 +54,7 @@ dependencies {
     implementation libraries.rxAndroid
     implementation libraries.rxBinding.platform
     implementation libraries.rxJava
-    implementation libraries.gson
-    implementation libraries.okHttp
-    implementation libraries.retrofit
+    implementation libraries.rxKotlin
 
     implementation libraries.dagger.dagger
     implementation libraries.dagger.support
@@ -64,18 +62,7 @@ dependencies {
     kapt libraries.dagger.compiler
 
     implementation libraries.lifeCycle
-    implementation libraries.materialValue
 
-    implementation libraries.glide.glide
-    kapt libraries.glide.compiler
 
-    implementation libraries.epoxy.epoxy
-    implementation libraries.epoxy.databinding
-    kapt libraries.epoxy.processor
-
-    implementation libraries.butterknife.butterknife
-    kapt libraries.butterknife.compiler
-
-    implementation libraries.rxKotlin
 
 }

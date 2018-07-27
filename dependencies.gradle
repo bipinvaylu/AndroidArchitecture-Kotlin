@@ -7,16 +7,8 @@ ext {
             rxAndroid                     : '2.0.2',
             rxBinding                     : '2.1.1',
             rxKotlin                      : '2.2.0',
-            rxJava                        : '2.1.16',
-            rxPermissions                 : '0.9.5',
-            rxKotlin                      : '2.2.0',
             dagger                        : '2.16',
-            retrofit                      : '2.4.0',
-            okHttp                        : '3.11.0',
-            gson                          : '2.8.5',
-            epoxy                         : '2.14.0',
-            glide                         : '4.7.1',
-            butterknife                   : '8.8.1',
+            lifeCycle                     : '1.1.1'
     ]
 
     libraries = [
@@ -38,9 +30,7 @@ ext {
                     design   : "com.jakewharton.rxbinding2:rxbinding-design-kotlin:$versions.rxBinding"
             ],
             rxKotlin      : "io.reactivex.rxjava2:rxkotlin:$versions.rxKotlin",
-            rxPermissions : "com.tbruyelle.rxpermissions2:rxpermissions:$versions.rxPermissions@aar",
             rxJava        : "io.reactivex.rxjava2:rxjava:$versions.rxJava",
-            rxKotlin      : "io.reactivex.rxjava2:rxkotlin:$versions.rxKotlin",
             dagger        : [
                     dagger   : "com.google.dagger:dagger:$versions.dagger",
                     compiler : "com.google.dagger:dagger-compiler:$versions.dagger",
@@ -49,29 +39,7 @@ ext {
 
             ],
             timber        : "com.jakewharton.timber:timber:$versions.timber",
-            retrofit      : "com.squareup.retrofit2:retrofit:$versions.retrofit",
-            okHttp        : "com.squareup.okhttp3:okhttp:$versions.okHttp",
-            gson          : "com.google.code.gson:gson:$versions.gson",
-
-            lifeCycle     : "android.arch.lifecycle:extensions:1.1.1",
-
-            materialValue : "blue.aodev:material-values:1.1.1",
-
-            epoxy         : [
-                    epoxy      : "com.airbnb.android:epoxy:$versions.epoxy",
-                    processor  : "com.airbnb.android:epoxy-processor:$versions.epoxy",
-                    databinding: "com.airbnb.android:epoxy-databinding:2.6.0"
-            ],
-            glide         : [
-                    glide   : "com.github.bumptech.glide:glide:$versions.glide",
-                    compiler: "com.github.bumptech.glide:compiler:$versions.glide",
-            ],
-
-            butterknife   : [
-                    butterknife: "com.jakewharton:butterknife:$versions.butterknife",
-                    compiler   : "com.jakewharton:butterknife-compiler:$versions.butterknife"
-            ]
-
+            lifeCycle     : "android.arch.lifecycle:extensions:$versions.lifeCycle",
 
     ]
 }
