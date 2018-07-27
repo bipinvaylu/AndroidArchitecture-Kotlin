@@ -1,0 +1,81 @@
+apply from: "$rootDir/dependencies.gradle"
+apply from: "$rootDir/configuration.gradle"
+
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+def versionMajor = 0
+def versionMinor = 0
+def versionPatch = 1
+def versionBuild = 0
+
+android {
+    compileSdkVersion configuration.compileSdkVersion
+    buildToolsVersion configuration.buildToolsVersion
+
+    defaultConfig {
+        applicationId "bipin.com.android.arch"
+
+        minSdkVersion configuration.minSdkVersion
+        targetSdkVersion configuration.targetSdkVersion
+
+        versionCode versionMajor * 1000000 + versionMinor * 10000 + versionPatch * 100 + versionBuild
+        versionName "$versionMajor.$versionMinor.$versionPatch"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+}
+
+dependencies {
+
+    implementation libraries.androidSupport.appCompat
+    implementation libraries.androidSupport.constraintLayout
+    implementation libraries.androidSupport.cardView
+    implementation libraries.androidSupport.design
+    implementation libraries.kotlin.stdlib
+    implementation libraries.timber
+
+    implementation libraries.rxAndroid
+    implementation libraries.rxBinding.platform
+    implementation libraries.rxJava
+    implementation libraries.gson
+    implementation libraries.okHttp
+    implementation libraries.retrofit
+
+    implementation libraries.dagger.dagger
+    implementation libraries.dagger.support
+    kapt libraries.dagger.processor
+    kapt libraries.dagger.compiler
+
+    implementation libraries.lifeCycle
+    implementation libraries.materialValue
+
+    implementation libraries.glide.glide
+    kapt libraries.glide.compiler
+
+    implementation libraries.epoxy.epoxy
+    implementation libraries.epoxy.databinding
+    kapt libraries.epoxy.processor
+
+    implementation libraries.butterknife.butterknife
+    kapt libraries.butterknife.compiler
+
+    implementation libraries.rxKotlin
+
+}
